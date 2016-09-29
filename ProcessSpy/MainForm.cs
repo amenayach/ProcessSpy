@@ -38,7 +38,9 @@ namespace ProcessSpy
                 IntPtr hWnd = NativeMethods.WindowFromPoint(p);
 
                 IntPtr processId;
+
                 NativeMethods.GetWindowThreadProcessId(hWnd, out processId);
+
                 richTextBox1.Text = Process.GetProcessById(processId.ToInt32()).MainModule.FileName;
 
             }
