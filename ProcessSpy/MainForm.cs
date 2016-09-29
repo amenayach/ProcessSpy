@@ -21,7 +21,7 @@ namespace ProcessSpy
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             _timer = new Timer() { Interval =  1000};
             _timer.Tick += Tm_Tick;
@@ -30,18 +30,27 @@ namespace ProcessSpy
 
         private void Tm_Tick(object sender, EventArgs e)
         {
+            GetProcess(false);
+        }
+
+        private void GetProcess(bool copyToClipBoard)
+        {
             NativeMethods.POINT p;
 
             if (NativeMethods.GetCursorPos(out p))
             {
-
                 IntPtr hWnd = NativeMethods.WindowFromPoint(p);
 
                 IntPtr processId;
 
                 NativeMethods.GetWindowThreadProcessId(hWnd, out processId);
 
-                richTextBox1.Text = Process.GetProcessById(processId.ToInt32()).MainModule.FileName;
+                rtbProcessFilename.Text = Process.GetProcessById(processId.ToInt32()).MainModule.FileName;
+
+                if (copyToClipBoard)
+                {
+                    Clipboard.SetText(rtbProcessFilename.Text);
+                }
 
             }
         }
@@ -50,6 +59,11 @@ namespace ProcessSpy
         {
             _timer.Stop();
             _timer.Dispose();
+        }
+
+        private void MainForm_MouseClick(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

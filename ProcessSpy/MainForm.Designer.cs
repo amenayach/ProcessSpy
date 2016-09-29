@@ -28,37 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbProcessFilename = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // rtbProcessFilename
             // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(478, 94);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.rtbProcessFilename.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbProcessFilename.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbProcessFilename.Location = new System.Drawing.Point(0, 0);
+            this.rtbProcessFilename.Name = "rtbProcessFilename";
+            this.rtbProcessFilename.Size = new System.Drawing.Size(505, 94);
+            this.rtbProcessFilename.TabIndex = 0;
+            this.rtbProcessFilename.Text = "";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 94);
-            this.Controls.Add(this.richTextBox1);
+            this.ClientSize = new System.Drawing.Size(505, 94);
+            this.Controls.Add(this.rtbProcessFilename);
+            this.Icon = global::ProcessSpy.Properties.Resources.spider;
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Process Spy";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtbProcessFilename;
     }
 }
 
